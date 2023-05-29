@@ -46,8 +46,8 @@ class PrevItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(13)),
               child: Image.asset(
                 "assets/images/5-2-fruit-free-png-image.png",
-                height: screenHeight * 0.0001,
-                width: 4,
+                // height: screenHeight * 0.0001,
+                // width: 4,
                 // scale: 10,
                 fit: BoxFit.cover,
               ),
