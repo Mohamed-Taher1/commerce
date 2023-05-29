@@ -34,10 +34,10 @@ class PrevItem extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: 15,
-              left: screenWidth * .03,
-              right: screenWidth * .03,
-            ),
+                // top: 15,
+                // left: screenWidth * .03,
+                // right: screenWidth * .03,
+                ),
             child: Container(
               height: screenHeight * 0.25,
               width: screenWidth,
@@ -46,9 +46,9 @@ class PrevItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(13)),
               child: Image.asset(
                 "assets/images/5-2-fruit-free-png-image.png",
-                  height: screenHeight * 0.0001,
-                  width: 4,
-                  scale: 10,
+                height: screenHeight * 0.0001,
+                width: 4,
+                scale: 10,
                 fit: BoxFit.cover,
               ),
             ),
