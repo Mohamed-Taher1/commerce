@@ -67,8 +67,8 @@ class Profile extends StatelessWidget {
                             // fontWeight: FontWeight.w500,
                             fontSize: 20),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_forward,
                         color: mainColor,
                       )
