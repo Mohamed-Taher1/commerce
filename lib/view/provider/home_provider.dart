@@ -3,7 +3,6 @@ import 'package:commerce/view/screens/home_content.dart';
 import 'package:flutter/material.dart';
 import '../screens/favorive.dart';
 import '../screens/profile.dart';
-import '../screens/settings_tab.dart';
 
 class HomeProvider extends ChangeNotifier {
   int currentNavIndex = 0;
@@ -12,7 +11,7 @@ class HomeProvider extends ChangeNotifier {
     const HomeContent(),
     favorite(),
     cart(),
-    profile(),
+    ProfileTab(),
   ];
   List navPagesTitles = [
     "All Categorie",
