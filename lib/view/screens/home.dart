@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
           // backgroundColor: mainColor,
           appBar: AppBar(
             title: Text(
-              'All Categories',
+              provider.navPagesTitles[provider.currentNavIndex],
               style: GoogleFonts.aBeeZee(
                   color: mainColor, fontWeight: FontWeight.w600, fontSize: 20),
             ),

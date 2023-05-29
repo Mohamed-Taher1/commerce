@@ -15,6 +15,13 @@ class HomeProvider extends ChangeNotifier {
     cart(),
     profile(),
   ];
+  List navPagesTitles = [
+    "All Categorie",
+    "Favorite",
+    "Settings",
+    "Cart",
+    "Profile",
+  ];
 
   changeIndex(int index) {
     currentNavIndex = index;
