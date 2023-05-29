@@ -87,15 +87,24 @@ class PrevItem extends StatelessWidget {
             SizedBox(
               height: screenHeight * 0.01,
             ),
-            Text('Fruit' , style: mainFont.copyWith(color: limonColor ,fontSize: 20)),
+            Text('Fruit',
+                style: mainFont.copyWith(color: limonColor, fontSize: 20)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Alphonso mango', style: mainFont.copyWith(color: Colors.white ,fontSize: 25)),
+                Text('Alphonso mango',
+                    style:
+                        mainFont.copyWith(color: Colors.white, fontSize: 25)),
                 Row(
                   children: [
-                    Text('\$32.06', style: mainFont.copyWith(color: limonColor ,fontSize: 25)),
-                    Text(' 34.26', style: mainFont.copyWith(color: Colors.grey ,fontSize: 17 ,)),
+                    Text('\$32.06',
+                        style:
+                            mainFont.copyWith(color: limonColor, fontSize: 25)),
+                    Text(' 34.26',
+                        style: mainFont.copyWith(
+                          color: Colors.grey,
+                          fontSize: 17,
+                        )),
                   ],
                 ),
               ],
@@ -108,24 +117,46 @@ class PrevItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.star , color: Colors.orange,size: 30,),
-                    Text(' 4.5 ', style: mainFont.copyWith(color: Colors.white ,fontSize: 20)),
-                    Icon(Icons.chat , color: limonColor,size: 30,),
-                    Text(' 63 Fleviews ' , style: mainFont.copyWith(color: Colors.grey ,fontSize: 18)),
+                    Icon(
+                      Icons.star,
+                      color: Colors.orange,
+                      size: 30,
+                    ),
+                    Text(' 4.5 ',
+                        style: mainFont.copyWith(
+                            color: Colors.white, fontSize: 20)),
+                    Icon(
+                      Icons.chat,
+                      color: limonColor,
+                      size: 30,
+                    ),
+                    Text(' 63 Fleviews ',
+                        style: mainFont.copyWith(
+                            color: Colors.grey, fontSize: 18)),
                   ],
                 ),
                 Container(
                   width: screenWidth * 0.29,
                   height: screenHeight * 0.06,
                   decoration: BoxDecoration(
-                    color: Color(0xFF034066),
-                    borderRadius: BorderRadius.circular(50)
-                  ),
+                      color: Color(0xFF034066),
+                      borderRadius: BorderRadius.circular(50)),
                   child: Row(
                     children: [
-                      IconButton(onPressed: (){}, icon: Icon(Icons.plus_one, color: Colors.white,)),
-                      Text('1'),
-                      IconButton(color: Colors.white,onPressed: (){}, icon: Icon(Icons.exposure_minus_1 , color: Colors.white,)),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.plus_one,
+                            color: Colors.white,
+                          )),
+                      const Text('1'),
+                      IconButton(
+                          color: Colors.white,
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.exposure_minus_1,
+                            color: Colors.white,
+                          )),
                     ],
                   ),
                 ),

@@ -1,7 +1,6 @@
 import 'package:commerce/constants.dart';
 import 'package:commerce/view/provider/home_provider.dart';
 import 'package:commerce/view/screens/home.dart';
-import 'package:commerce/view/screens/prev_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';

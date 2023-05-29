@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import '../provider/home_provider.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(

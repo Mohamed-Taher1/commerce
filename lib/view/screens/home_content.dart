@@ -110,9 +110,9 @@ class HomeContent extends StatelessWidget {
             padding: EdgeInsets.only(left: screenWidth * .032),
             child: GridView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 5,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 childAspectRatio: 0.9,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
