@@ -2,7 +2,6 @@ import 'package:commerce/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/home_provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,7 +11,6 @@ class HomePage extends StatelessWidget {
       builder: (context, provider, child) {
         return Scaffold(
           // backgroundColor: mainColor,
-
           appBar: AppBar(
             title: Text(
               provider.navPagesTitles[provider.currentNavIndex],
@@ -20,34 +18,23 @@ class HomePage extends StatelessWidget {
                   color: mainColor, fontWeight: FontWeight.w600, fontSize: 20),
             ),
             actions: [
-              provider.currentNavIndex != 4
-                  ? Row(
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.search,
-                              color: mainColor,
-                            )),
-                        Container(
-                          height: 20,
-                          width: 1,
-                          color: Colors.blueGrey,
-                        ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.notifications,
-                              color: mainColor,
-                            )),
-                      ],
-                    )
-                  : IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.power_settings_new,
-                        color: mainColor,
-                      )),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    color: mainColor,
+                  )),
+              Container(
+                height: 20,
+                width: 1,
+                color: Colors.blueGrey,
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.notifications,
+                    color: mainColor,
+                  )),
             ],
           ),
 

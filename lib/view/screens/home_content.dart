@@ -55,7 +55,7 @@ class HomeContent extends StatelessWidget {
               style: mainFont.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 15),
+                  fontSize: 16),
             ),
           ),
           Padding(
@@ -100,10 +100,10 @@ class HomeContent extends StatelessWidget {
                 EdgeInsets.only(top: 25, left: screenWidth * .032, bottom: 25),
             child: Text(
               'Popular Products',
-              style: TextStyle(
-                  fontSize: 20,
+              style: mainFont.copyWith(
                   color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16),
             ),
           ),
           Padding(
