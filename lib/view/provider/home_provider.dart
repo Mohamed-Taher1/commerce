@@ -11,14 +11,12 @@ class HomeProvider extends ChangeNotifier {
   List navPages = [
     const HomeContent(),
     favorite(),
-    settings(),
     cart(),
     profile(),
   ];
   List navPagesTitles = [
     "All Categorie",
     "Favorite",
-    "Settings",
     "Cart",
     "Profile",
   ];
