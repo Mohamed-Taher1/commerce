@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+
 import '../provider/home_provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,23 +24,30 @@ class HomePage extends StatelessWidget {
                     fontSize: 20),
               ),
               actions: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.search,
-                      color: mainColor,
-                    )),
-                Container(
-                  height: 20,
-                  width: 1,
-                  color: Colors.blueGrey,
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.notifications,
-                      color: mainColor,
-                    )),
+                provider.currentNavIndex != 3
+                    ? Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.search,
+                                color: mainColor,
+                              )),
+                          Container(
+                            height: 20,
+                            width: 1,
+                            color: Colors.blueGrey,
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.notifications,
+                                color: mainColor,
+                              )),
+                        ],
+                      )
+                    : IconButton(
+                        onPressed: () {}, icon: Icon(Icons.power_settings_new)),
               ],
             ),
             body: provider.navPages[provider.currentNavIndex],
