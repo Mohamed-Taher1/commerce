@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../constants.dart';
 
-Color press_Color = limonColor;
 catagoryContainer(
     {required String name, required int index, required BuildContext context}) {
   return Padding(
@@ -14,7 +13,7 @@ catagoryContainer(
                 context,
               ).catagoriesCurrentIndex
           ? TextButton.styleFrom(
-              backgroundColor: press_Color,
+              backgroundColor: limonColor,
             )
           : null,
       onPressed: () {
@@ -28,7 +27,9 @@ catagoryContainer(
                   context,
                 ).catagoriesCurrentIndex
             ? mainFont.copyWith(color: mainColor)
-            : mainFont.copyWith(color: Colors.white),
+            : mainFont.copyWith(
+                color: Colors.white,
+              ),
       ),
     ),
   );

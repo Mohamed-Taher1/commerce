@@ -14,131 +14,114 @@ class HomePage extends StatelessWidget {
     return Consumer<HomeProvider>(
       builder: (context, provider, child) {
         return Scaffold(
-            // backgroundColor: mainColor,
-            appBar: AppBar(
-              title: Text(
-                provider.navPagesTitles[provider.currentNavIndex],
-                style: GoogleFonts.aBeeZee(
-                    color: mainColor,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20),
-              ),
-              actions: [
-                provider.currentNavIndex != 3
-                    ? Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.search,
-                                color: mainColor,
-                              )),
-                          Container(
-                            height: 20,
-                            width: 1,
-                            color: Colors.blueGrey,
-                          ),
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.notifications,
-                                color: mainColor,
-                              )),
-                        ],
-                      )
-                    : IconButton(
-                        onPressed: () {}, icon: Icon(Icons.power_settings_new)),
+          // backgroundColor: mainColor,
+          appBar: AppBar(
+            title: Text(
+              provider.navPagesTitles[provider.currentNavIndex],
+              style: GoogleFonts.aBeeZee(
+                  color: mainColor, fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+            actions: [
+              provider.currentNavIndex != 4
+                  ? Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.search,
+                              color: mainColor,
+                            )),
+                        Container(
+                          height: 20,
+                          width: 1,
+                          color: Colors.blueGrey,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.notifications,
+                              color: mainColor,
+                            )),
+                      ],
+                    )
+                  : IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.power_settings_new)),
+            ],
+          ),
+          body: AnimatedSwitcher(
+            //pages animation time
+            duration: const Duration(milliseconds: 150),
+            transitionBuilder: (child, animation) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+            child: provider.navPages[provider.currentNavIndex],
+          ),
+          bottomNavigationBar: Container(
+            decoration: const BoxDecoration(
+              color: limonColor,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 5,
+                  // color: Colors.black.withOpacity(.1),
+                )
               ],
             ),
-            body: provider.navPages[provider.currentNavIndex],
-            bottomNavigationBar: Container(
-              decoration: const BoxDecoration(
-                color: limonColor,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 5,
-                    // color: Colors.black.withOpacity(.1),
-                  )
-                ],
-              ),
-              padding: const EdgeInsets.only(
-                  bottom: 20, top: 8, left: 10, right: 10),
-              child: GNav(
-                selectedIndex: provider.currentNavIndex,
-                onTabChange: (value) {
-                  provider.changeIndex(value);
-                },
-                gap: 8,
-                color: mainColor,
-                // rippleColor: limonColor,
-                // duration: Duration(microseconds: 400),
-                activeColor: mainColor,
-                backgroundColor: limonColor,
-                tabBackgroundColor: mainColor,
-                hoverColor: mainColor.withOpacity(.5),
-                iconSize: 21,
-                padding: const EdgeInsets.all(10),
-                tabs: const [
-                  GButton(
-                    icon: Icons.home,
-                    text: "Home",
-                    iconActiveColor: whiteColor,
-                    textColor: whiteColor,
-                  ),
-                  GButton(
-                    icon: Icons.favorite_border,
-                    iconActiveColor: whiteColor,
-                    textColor: whiteColor,
-                    text: "Favorite",
-                  ),
-                  GButton(
-                    icon: Icons.shopping_bag_outlined,
-                    text: "Cart",
-                    iconActiveColor: whiteColor,
-                    textColor: whiteColor,
-                  ),
-                  GButton(
-                    icon: Icons.person,
-                    text: "Profile",
-                    iconActiveColor: whiteColor,
-                    textColor: whiteColor,
-                  ),
-                ],
-              ),
-            )
-
-            // bottomNavigationBar: BottomNavigationBar(
-            //   type: BottomNavigationBarType.fixed,
-            //   currentIndex: provider.currentNavIndex,
-            //   onTap: (value) {
-            //     provider.changeIndex(value);
-            //   },
-            //   selectedItemColor: mainColor,
-            //   // unselectedItemColor: Colors.white,
-            //   items: const [
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.home),
-            //       label: "Home",
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.favorite_border),
-            //       label: "Favorite",
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.settings),
-            //       label: "Settings",
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.shopping_bag_outlined),
-            //       label: "Cart",
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.person),
-            //       label: "Profile",
-            //     ),
-            //   ],
-            // ),
-            );
+            padding:
+                const EdgeInsets.only(bottom: 20, top: 8, left: 10, right: 10),
+            child: GNav(
+              selectedIndex: provider.currentNavIndex,
+              onTabChange: (value) {
+                provider.changeIndex(value);
+              },
+              gap: 8,
+              color: mainColor,
+              // rippleColor: limonColor,
+              // duration: Duration(microseconds: 400),
+              activeColor: mainColor,
+              backgroundColor: limonColor,
+              tabBackgroundColor: mainColor,
+              hoverColor: mainColor.withOpacity(.2),
+              iconSize: 21,
+              padding: const EdgeInsets.all(10),
+              tabs: const [
+                GButton(
+                  icon: Icons.home,
+                  text: "Home",
+                  iconActiveColor: whiteColor,
+                  textColor: whiteColor,
+                ),
+                GButton(
+                  icon: Icons.favorite_border,
+                  iconActiveColor: whiteColor,
+                  textColor: whiteColor,
+                  text: "Favorite",
+                ),
+                GButton(
+                  icon: Icons.shopping_bag_outlined,
+                  text: "Cart",
+                  iconActiveColor: whiteColor,
+                  textColor: whiteColor,
+                ),
+                GButton(
+                  icon: Icons.settings,
+                  text: "Settings",
+                  iconActiveColor: whiteColor,
+                  textColor: whiteColor,
+                ),
+                GButton(
+                  icon: Icons.person,
+                  text: "Profile",
+                  iconActiveColor: whiteColor,
+                  textColor: whiteColor,
+                ),
+              ],
+            ),
+          ),
+        );
       },
     );
   }

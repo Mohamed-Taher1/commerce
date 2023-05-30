@@ -119,10 +119,7 @@ class HomeContent extends StatelessWidget {
                 // crossAxisSpacing: 10
               ),
               itemBuilder: (context, index) {
-                return productModleTwo(
-                  height: screenHeight,
-                  width: screenWidth,
-                );
+                return productModleTwo();
               },
             ),
           ),
