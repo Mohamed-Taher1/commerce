@@ -1,5 +1,5 @@
 import 'package:commerce/constants.dart';
-import 'package:commerce/view/screens/home.dart';
+import 'package:commerce/view/mobile/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -95,7 +95,7 @@ class IntroPage extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Get.off(() => HomePage());
+                Get.off(() => PHomePage());
               },
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.05,

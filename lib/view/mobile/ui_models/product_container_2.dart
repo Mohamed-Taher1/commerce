@@ -1,9 +1,11 @@
 import 'package:commerce/constants.dart';
-import 'package:commerce/view/provider/home_provider.dart';
+import 'package:commerce/view/mobile/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class productModleTwo extends StatelessWidget {
+  const productModleTwo({Key? key, required this.productId}) : super(key: key);
+  final String productId;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -67,20 +69,25 @@ class productModleTwo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Provider.of<HomeProvider>(context, listen: false)
-                        .addToFavorite();
+                Consumer<HomeProvider>(
+                  builder: (context, provider, child) {
+                    return IconButton(
+                      onPressed: () {
+                        Provider.of<HomeProvider>(context, listen: false)
+                            .toggleBookmarkStatus(productId);
+                      },
+                      icon: Provider.of<HomeProvider>(context)
+                              .isBookmarked(productId)
+                          ? Icon(
+                              Icons.favorite,
+                              color: limonColor,
+                            )
+                          : Icon(
+                              Icons.favorite_outline,
+                              color: limonColor,
+                            ),
+                    );
                   },
-                  icon: Provider.of<HomeProvider>(context).isBookmarked
-                      ? Icon(
-                          Icons.favorite_outline,
-                          color: limonColor,
-                        )
-                      : Icon(
-                          Icons.favorite,
-                          color: limonColor,
-                        ),
                 ),
               ],
             ),

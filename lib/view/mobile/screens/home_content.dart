@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:commerce/view/mobile/provider/home_provider.dart';
 import 'package:flutter/material.dart';
-import '../../constants.dart';
+import 'package:provider/provider.dart';
+import '../../../constants.dart';
 import '../ui_models/catagory_container.dart';
 import '../ui_models/product_container_1.dart';
-import '../ui_models/product_container_2.dart';
 
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
@@ -69,12 +70,12 @@ class HomeContent extends StatelessWidget {
                   left: screenWidth * .032,
                 ),
                 scrollDirection: Axis.horizontal,
-                itemCount: 2,
+                itemCount: 6,
                 itemBuilder: (context, index) {
                   return catagoryContainer(
                     context: context,
                     index: index,
-                    name: 'Catss',
+                    name: 'Catagory',
                   );
                 },
               ),
@@ -111,7 +112,9 @@ class HomeContent extends StatelessWidget {
             child: GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 5,
+              padding: const EdgeInsets.only(bottom: 40),
+              itemCount:
+                  Provider.of<HomeProvider>(context).productModelTwoList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 childAspectRatio: 0.9,
                 mainAxisSpacing: 10,
@@ -119,7 +122,8 @@ class HomeContent extends StatelessWidget {
                 // crossAxisSpacing: 10
               ),
               itemBuilder: (context, index) {
-                return productModleTwo();
+                return Provider.of<HomeProvider>(context)
+                    .productModelTwoList[index];
               },
             ),
           ),

@@ -1,7 +1,7 @@
-import 'package:commerce/view/provider/home_provider.dart';
+import 'package:commerce/view/mobile/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../constants.dart';
+import '../../../constants.dart';
 
 catagoryContainer(
     {required String name, required int index, required BuildContext context}) {

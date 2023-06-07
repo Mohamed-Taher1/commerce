@@ -1,5 +1,5 @@
 import 'package:commerce/constants.dart';
-import 'package:commerce/view/screens/prev_item.dart';
+import 'package:commerce/view/mobile/screens/prev_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
