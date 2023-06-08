@@ -1,6 +1,7 @@
 import 'package:commerce/constants.dart';
 import 'package:commerce/view/mobile/provider/home_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class productModleTwo extends StatelessWidget {
@@ -8,40 +9,39 @@ class productModleTwo extends StatelessWidget {
   final String productId;
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.only(right: 11),
+      padding: EdgeInsets.only(right: 11.w, bottom: 11.h),
       child: Container(
-        // height: height * .1,
-        width: width * .44,
+        // height: 110.h,
+        // width: 100.w,
         // alignment: Alignment.center,
         decoration: BoxDecoration(
             color: const Color(0xFF034066),
-            borderRadius: BorderRadius.circular(13)),
+            borderRadius: BorderRadius.circular(13.r)),
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.h),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 7,
+                  SizedBox(
+                    height: 3.h,
                   ),
                   Image.asset(
                     "assets/images/5-2-fruit-free-png-image.png",
-                    height: height * .16,
-                    width: width * .36,
-                    fit: BoxFit.cover,
+                    height: 100.h,
+                    width: 100.w,
+                    fit: BoxFit.contain,
                   ),
-                  const SizedBox(
-                    height: 1.5,
+                  SizedBox(
+                    height: 1.5.h,
                   ),
                   Text(
                     "Oranges",
-                    style: mainFont.copyWith(color: Colors.white),
+                    style:
+                        mainFont.copyWith(color: Colors.white, fontSize: 14.sp),
                     maxLines: 1,
                   ),
                   Row(
@@ -51,14 +51,15 @@ class productModleTwo extends StatelessWidget {
                         "EG 12",
                         style: mainFont.copyWith(
                           color: limonColor,
-                          fontSize: 12,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       Text(
                         "/Kg",
                         style: mainFont.copyWith(
                           color: Colors.grey,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                         ),
                       ),
                     ],
@@ -66,30 +67,34 @@ class productModleTwo extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Consumer<HomeProvider>(
-                  builder: (context, provider, child) {
-                    return IconButton(
-                      onPressed: () {
-                        Provider.of<HomeProvider>(context, listen: false)
-                            .toggleBookmarkStatus(productId);
-                      },
-                      icon: Provider.of<HomeProvider>(context)
-                              .isBookmarked(productId)
-                          ? Icon(
-                              Icons.favorite,
-                              color: limonColor,
-                            )
-                          : Icon(
-                              Icons.favorite_outline,
-                              color: limonColor,
-                            ),
-                    );
-                  },
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(left: 2.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                // mainAxisSize: MainAxisSize.min,
+                children: [
+                  Consumer<HomeProvider>(
+                    builder: (context, provider, child) {
+                      return IconButton(
+                        onPressed: () {
+                          Provider.of<HomeProvider>(context, listen: false)
+                              .toggleBookmarkStatus(productId);
+                        },
+                        icon: Provider.of<HomeProvider>(context)
+                                .isBookmarked(productId)
+                            ? const Icon(
+                                Icons.favorite,
+                                color: limonColor,
+                              )
+                            : const Icon(
+                                Icons.favorite_outline,
+                                color: limonColor,
+                              ),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),

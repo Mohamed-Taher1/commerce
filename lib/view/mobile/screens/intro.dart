@@ -1,6 +1,7 @@
 import 'package:commerce/constants.dart';
 import 'package:commerce/view/mobile/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable, use_key_in_widget_constructors
@@ -43,8 +44,8 @@ class IntroPage extends StatelessWidget {
                 child: Transform.rotate(
                   angle: -12 * 3.14159 / 180,
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    width: MediaQuery.of(context).size.width,
+                    height: 350.h,
+                    width: 400.w,
                     child: GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate:
@@ -72,21 +73,21 @@ class IntroPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * .08,
             ),
-            const Text(
+            Text(
               'Shop Fresh And Healthy \n Vegetables and fruits',
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
             ),
             const SizedBox(
               height: 10,
             ),
-            const Text(
+            Text(
               'We quickly deliver high - quality and fresh \n products to your home',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey),
             ),

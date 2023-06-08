@@ -1,5 +1,6 @@
 import 'package:commerce/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileTab extends StatelessWidget {
   ProfileTab({Key? key}) : super(key: key);
@@ -80,10 +81,10 @@ class ProfileTab extends StatelessWidget {
             ),
             InkWell(
               onTap: () {},
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(15.r),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r),
                   border: Border.all(color: limonColor),
                 ),
                 child: Padding(

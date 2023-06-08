@@ -1,5 +1,6 @@
 import 'package:commerce/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
@@ -15,39 +16,50 @@ class PHomePage extends StatelessWidget {
       builder: (context, provider, child) {
         return Scaffold(
           // backgroundColor: mainColor,
-          appBar: AppBar(
-            title: Text(
-              provider.navPagesTitles[provider.currentNavIndex],
-              style: GoogleFonts.aBeeZee(
-                  color: mainColor, fontWeight: FontWeight.w600, fontSize: 20),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(ScreenUtil().setHeight(50)),
+            child: AppBar(
+              title: Text(
+                provider.navPagesTitles[provider.currentNavIndex],
+                style: GoogleFonts.aBeeZee(
+                    color: mainColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18.sp),
+              ),
+              actions: [
+                provider.currentNavIndex != 4
+                    ? Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.search,
+                                size: 24.r,
+                                color: mainColor,
+                              )),
+                          Container(
+                            height: 20.h,
+                            width: 1.w,
+                            color: Colors.blueGrey,
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.notifications,
+                                color: mainColor,
+                                size: 24.r,
+                              )),
+                        ],
+                      )
+                    : IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.power_settings_new,
+                          color: mainColor,
+                          size: 24.r,
+                        )),
+              ],
             ),
-            actions: [
-              provider.currentNavIndex != 4
-                  ? Row(
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.search,
-                              color: mainColor,
-                            )),
-                        Container(
-                          height: 20,
-                          width: 1,
-                          color: Colors.blueGrey,
-                        ),
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.notifications,
-                              color: mainColor,
-                            )),
-                      ],
-                    )
-                  : IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.power_settings_new)),
-            ],
           ),
           body: AnimatedSwitcher(
             //pages animation time
@@ -70,14 +82,14 @@ class PHomePage extends StatelessWidget {
                 )
               ],
             ),
-            padding:
-                const EdgeInsets.only(bottom: 20, top: 8, left: 10, right: 10),
+            padding: EdgeInsets.only(
+                bottom: 20.h, top: 8.h, left: 10.w, right: 10.w),
             child: GNav(
               selectedIndex: provider.currentNavIndex,
               onTabChange: (value) {
                 provider.changeIndex(value);
               },
-              gap: 8,
+              gap: 7.w,
               color: mainColor,
               // rippleColor: limonColor,
               // duration: Duration(microseconds: 400),
@@ -85,12 +97,14 @@ class PHomePage extends StatelessWidget {
               backgroundColor: limonColor,
               tabBackgroundColor: mainColor,
               hoverColor: mainColor.withOpacity(.2),
-              iconSize: 21,
-              padding: const EdgeInsets.all(10),
-              tabs: const [
+              iconSize: 20.r,
+              padding: const EdgeInsets.all(9).r,
+              textStyle: TextStyle(fontSize: 14.sp, color: whiteColor),
+              tabs: [
                 GButton(
                   icon: Icons.home,
                   text: "Home",
+                  // textSize: 5.sp,
                   iconActiveColor: whiteColor,
                   textColor: whiteColor,
                 ),
