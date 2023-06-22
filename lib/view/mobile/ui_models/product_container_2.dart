@@ -16,8 +16,9 @@ class productModleTwo extends StatelessWidget {
         // width: 100.w,
         // alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: const Color(0xFF034066),
-            borderRadius: BorderRadius.circular(13.r)),
+          color: mainColorFaint,
+          borderRadius: BorderRadius.circular(13.r),
+        ),
         child: Stack(
           children: [
             Padding(

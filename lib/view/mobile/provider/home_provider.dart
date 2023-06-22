@@ -19,7 +19,7 @@ class HomeProvider extends ChangeNotifier {
     productModleTwo(productId: "112243"),
   ];
   List navPages = [
-    const HomeContent(),
+    const MobileHomeContent(),
     favorite(),
     cart(),
     SettingsTab(),

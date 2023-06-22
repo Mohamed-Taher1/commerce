@@ -96,7 +96,7 @@ class IntroPage extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Get.off(() => PHomePage());
+                Get.off(() => MobileHomePage());
               },
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.05,

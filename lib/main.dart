@@ -1,12 +1,14 @@
 import 'package:commerce/constants.dart';
 import 'package:commerce/view/mobile/provider/home_provider.dart';
-import 'package:commerce/view/mobile/screens/intro.dart';
+import 'package:commerce/view/windows/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  await ScreenUtil.ensureScreenSize();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<HomeProvider>(
       create: (context) => HomeProvider(),
@@ -31,6 +33,11 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: mainColor),
             scaffoldBackgroundColor: mainColor,
+            iconButtonTheme: const IconButtonThemeData(
+              style: ButtonStyle(
+                iconColor: MaterialStatePropertyAll(whiteColor),
+              ),
+            ),
             appBarTheme: const AppBarTheme(
               backgroundColor: limonColor,
             ),
@@ -40,9 +47,9 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
           ),
           // home: Platform.isAndroid || Platform.isAndroid
-          //     ? PHomePage()
+          //     ? MobileHomePage()
           //     : Dashboard(),
-          home: IntroPage(),
+          home: Dashboard(),
         );
       },
     );

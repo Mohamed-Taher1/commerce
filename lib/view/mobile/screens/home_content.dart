@@ -7,8 +7,8 @@ import '../../../constants.dart';
 import '../ui_models/catagory_container.dart';
 import '../ui_models/product_container_1.dart';
 
-class HomeContent extends StatelessWidget {
-  const HomeContent({super.key});
+class MobileHomeContent extends StatelessWidget {
+  const MobileHomeContent({super.key});
 
   @override
   Widget build(BuildContext context) {

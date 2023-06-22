@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 import '../provider/home_provider.dart';
 
-class PHomePage extends StatelessWidget {
-  const PHomePage({super.key});
+class MobileHomePage extends StatelessWidget {
+  const MobileHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -100,11 +100,10 @@ class PHomePage extends StatelessWidget {
               iconSize: 20.r,
               padding: const EdgeInsets.all(9).r,
               textStyle: TextStyle(fontSize: 14.sp, color: whiteColor),
-              tabs: [
+              tabs: const [
                 GButton(
                   icon: Icons.home,
                   text: "Home",
-                  // textSize: 5.sp,
                   iconActiveColor: whiteColor,
                   textColor: whiteColor,
                 ),
