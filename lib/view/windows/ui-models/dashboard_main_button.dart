@@ -11,18 +11,17 @@ class DashboardMainButton extends StatelessWidget {
     var width = MediaQuery.sizeOf(context).width;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 5,
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       child: InkWell(
-        borderRadius: BorderRadius.all(Radius.circular(5)),
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
         onTap: () {},
         child: Container(
           // alignment: Alignment.center,
           width: 70.w,
           decoration: const BoxDecoration(
-              color: mainColorFaint,
-              borderRadius: BorderRadius.all(Radius.circular(5))),
+              // color: mainColorFaint,
+              color: whiteColor,
+              borderRadius: BorderRadius.all(Radius.circular(7))),
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 10),
             child: Row(
@@ -30,18 +29,20 @@ class DashboardMainButton extends StatelessWidget {
               children: [
                 Icon(
                   Icons.dashboard,
-                  color: whiteColor,
+                  // color: whiteColor,
+                  color: mainColorFaint,
                   size: 15.r,
                 ),
                 SizedBox(
                   width: width * .005,
                 ),
-                Text(
-                  buttonTitle!,
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    color: whiteColor,
+                Container(
+                  width: 45.w,
+                  child: Text(
+                    buttonTitle!,
+                    maxLines: 1,
+                    style: mainFont.copyWith(
+                        fontSize: 15.sp, color: mainColorFaint),
                   ),
                 ),
               ],

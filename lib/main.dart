@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: mainColor,
             iconButtonTheme: const IconButtonThemeData(
               style: ButtonStyle(
-                iconColor: MaterialStatePropertyAll(whiteColor),
+                iconColor: MaterialStatePropertyAll(mainColorFaint),
               ),
             ),
             appBarTheme: const AppBarTheme(

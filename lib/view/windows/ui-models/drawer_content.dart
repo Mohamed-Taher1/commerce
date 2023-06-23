@@ -5,12 +5,20 @@ import '../../../constants.dart';
 import 'dashboard_main_button.dart';
 
 class DashboardDrawerContent extends StatelessWidget {
-  const DashboardDrawerContent({super.key});
-
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.sizeOf(context).height;
+    var width = MediaQuery.sizeOf(context).width;
+    print(height);
+    print(width);
     return Container(
-      color: whiteColor,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+              "assets/images/Purple Blue and Black Clean Graphic Welcome Message High School Back to School Banner.png"),
+          fit: BoxFit.fill,
+        ),
+      ),
       width: 70.w,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 2.5),
@@ -21,15 +29,23 @@ class DashboardDrawerContent extends StatelessWidget {
               width: 60.w,
               child: Column(
                 children: [
-                  SizedBox(
+                  Container(
                     height: 100.h,
                     width: 100.w,
-                    child: CircleAvatar(),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: whiteColor),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            fit: BoxFit.contain,
+                            image: AssetImage(
+                              "assets/images/how-to-become-an-online-business-manager.jpg",
+                            ))),
                   ),
                   Text(
                     'manager 1',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18.sp),
+                    style:
+                        mainFont.copyWith(fontSize: 18.sp, color: whiteColor),
                   ),
                 ],
               ),
@@ -38,7 +54,24 @@ class DashboardDrawerContent extends StatelessWidget {
             DashboardMainButton(buttonTitle: "Management"),
             DashboardMainButton(buttonTitle: "Order History"),
             DashboardMainButton(buttonTitle: "Banner & offers"),
-            DashboardMainButton(buttonTitle: "Dashboard"),
+            DashboardMainButton(buttonTitle: "Vendors"),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.h),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Icon(Icons.power_settings_new_rounded),
+                    FittedBox(
+                      child: Text(
+                        "Logout",
+                        style: mainFont.copyWith(fontSize: 14.sp),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
